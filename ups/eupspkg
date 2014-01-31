@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. "$EUPS_DIR/lib/eupspkg.sh"
+
+"$@"
