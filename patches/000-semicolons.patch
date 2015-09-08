@@ -1,0 +1,67 @@
+--- a/src/google/protobuf/descriptor.h
++++ b/src/google/protobuf/descriptor.h
+@@ -1475,7 +1475,7 @@ PROTOBUF_DEFINE_ARRAY_ACCESSOR(Descriptor, extension_range,
+                                const Descriptor::ExtensionRange*)
+ PROTOBUF_DEFINE_ARRAY_ACCESSOR(Descriptor, extension,
+                                const FieldDescriptor*)
+-PROTOBUF_DEFINE_OPTIONS_ACCESSOR(Descriptor, MessageOptions);
++PROTOBUF_DEFINE_OPTIONS_ACCESSOR(Descriptor, MessageOptions)
+ PROTOBUF_DEFINE_ACCESSOR(Descriptor, is_placeholder, bool)
+ 
+ PROTOBUF_DEFINE_STRING_ACCESSOR(FieldDescriptor, name)
+@@ -1521,7 +1521,7 @@ PROTOBUF_DEFINE_ACCESSOR(EnumDescriptor, containing_type, const Descriptor*)
+ PROTOBUF_DEFINE_ACCESSOR(EnumDescriptor, value_count, int)
+ PROTOBUF_DEFINE_ARRAY_ACCESSOR(EnumDescriptor, value,
+                                const EnumValueDescriptor*)
+-PROTOBUF_DEFINE_OPTIONS_ACCESSOR(EnumDescriptor, EnumOptions);
++PROTOBUF_DEFINE_OPTIONS_ACCESSOR(EnumDescriptor, EnumOptions)
+ PROTOBUF_DEFINE_ACCESSOR(EnumDescriptor, is_placeholder, bool)
+ 
+ PROTOBUF_DEFINE_STRING_ACCESSOR(EnumValueDescriptor, name)
+@@ -1536,14 +1536,14 @@ PROTOBUF_DEFINE_ACCESSOR(ServiceDescriptor, file, const FileDescriptor*)
+ PROTOBUF_DEFINE_ACCESSOR(ServiceDescriptor, method_count, int)
+ PROTOBUF_DEFINE_ARRAY_ACCESSOR(ServiceDescriptor, method,
+                                const MethodDescriptor*)
+-PROTOBUF_DEFINE_OPTIONS_ACCESSOR(ServiceDescriptor, ServiceOptions);
++PROTOBUF_DEFINE_OPTIONS_ACCESSOR(ServiceDescriptor, ServiceOptions)
+ 
+ PROTOBUF_DEFINE_STRING_ACCESSOR(MethodDescriptor, name)
+ PROTOBUF_DEFINE_STRING_ACCESSOR(MethodDescriptor, full_name)
+ PROTOBUF_DEFINE_ACCESSOR(MethodDescriptor, service, const ServiceDescriptor*)
+ PROTOBUF_DEFINE_ACCESSOR(MethodDescriptor, input_type, const Descriptor*)
+ PROTOBUF_DEFINE_ACCESSOR(MethodDescriptor, output_type, const Descriptor*)
+-PROTOBUF_DEFINE_OPTIONS_ACCESSOR(MethodDescriptor, MethodOptions);
++PROTOBUF_DEFINE_OPTIONS_ACCESSOR(MethodDescriptor, MethodOptions)
+ PROTOBUF_DEFINE_STRING_ACCESSOR(FileDescriptor, name)
+ PROTOBUF_DEFINE_STRING_ACCESSOR(FileDescriptor, package)
+ PROTOBUF_DEFINE_ACCESSOR(FileDescriptor, pool, const DescriptorPool*)
+@@ -1554,7 +1554,7 @@ PROTOBUF_DEFINE_ACCESSOR(FileDescriptor, message_type_count, int)
+ PROTOBUF_DEFINE_ACCESSOR(FileDescriptor, enum_type_count, int)
+ PROTOBUF_DEFINE_ACCESSOR(FileDescriptor, service_count, int)
+ PROTOBUF_DEFINE_ACCESSOR(FileDescriptor, extension_count, int)
+-PROTOBUF_DEFINE_OPTIONS_ACCESSOR(FileDescriptor, FileOptions);
++PROTOBUF_DEFINE_OPTIONS_ACCESSOR(FileDescriptor, FileOptions)
+ PROTOBUF_DEFINE_ACCESSOR(FileDescriptor, is_placeholder, bool)
+ 
+ PROTOBUF_DEFINE_ARRAY_ACCESSOR(FileDescriptor, message_type, const Descriptor*)
+--- a/src/google/protobuf/wire_format_lite_inl.h
++++ b/src/google/protobuf/wire_format_lite_inl.h
+@@ -410,12 +410,12 @@ inline bool WireFormatLite::ReadPackedPrimitive<                               \
+       CPPTYPE, WireFormatLite::DECLARED_TYPE>(input, values);                  \
+ }
+ 
+-READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(uint32, TYPE_FIXED32);
+-READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(uint64, TYPE_FIXED64);
+-READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(int32, TYPE_SFIXED32);
+-READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(int64, TYPE_SFIXED64);
+-READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(float, TYPE_FLOAT);
+-READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(double, TYPE_DOUBLE);
++READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(uint32, TYPE_FIXED32)
++READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(uint64, TYPE_FIXED64)
++READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(int32, TYPE_SFIXED32)
++READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(int64, TYPE_SFIXED64)
++READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(float, TYPE_FLOAT)
++READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE(double, TYPE_DOUBLE)
+ 
+ #undef READ_REPEATED_PACKED_FIXED_SIZE_PRIMITIVE
+ 
