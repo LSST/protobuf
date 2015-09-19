@@ -1,0 +1,22 @@
+diff --git a/src/google/protobuf/unknown_field_set.h b/src/google/protobuf/unknown_field_set.h
+index ba202eb..262a208 100644
+--- a/src/google/protobuf/unknown_field_set.h
++++ b/src/google/protobuf/unknown_field_set.h
+@@ -207,13 +207,14 @@ class LIBPROTOBUF_EXPORT UnknownField {
+ 
+   uint32 number_;
+   uint32 type_;
++  union length_delimited {
++    string* string_value_;
++  };
+   union {
+     uint64 varint_;
+     uint32 fixed32_;
+     uint64 fixed64_;
+-    mutable union {
+-      string* string_value_;
+-    } length_delimited_;
++    mutable union length_delimited length_delimited_;
+     UnknownFieldSet* group_;
+   };
+ };
