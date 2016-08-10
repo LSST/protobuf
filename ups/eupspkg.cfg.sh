@@ -15,5 +15,5 @@ install()
     PYDEST="$PREFIX/lib/python"
     mkdir -p "$PYDEST"
     cd python
-    PYTHONPATH="$PYDEST:$PYTHONPATH" python setup.py install $PYSETUP_INSTALL_OPTIONS
+    PYTHONPATH="$PYDEST:$PYTHONPATH" eval python setup.py install $PYSETUP_INSTALL_OPTIONS
 }
